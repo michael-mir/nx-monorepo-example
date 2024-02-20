@@ -55,3 +55,21 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 - [Join the community](https://nx.dev/community)
 - [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
+
+The component also supports many properties for more specific work:
+| **Prop**                  | **Type** | **Default**  | **Note**                                                                                |
+| ------------------------- | -------- | ------------ | --------------------------------------------------------------------------------------- |
+| stream                    | boolean  |              | external media stream (turns off internal media stream handling logic)                  |
+| mirrored                  | boolean  | false        | show camera preview and get the screenshot mirrored                                     |
+| mainCamera                | boolean  | false        | should use a main camera (requires Navigator.mediaDevices.enumerateDevices)             |
+| frontCamera               | boolean  | false        | should use a front camera (MediaTrackConstraints['facingFront'] === 'user')             |
+| applyConstraints          | boolean  | false        | should new constraints be applied to the media stream                                   |
+| cameraResolutionType      | string   |              | video track resolution size - `('UHD' \| 'QHD' \| 'FHD' \| 'HD')`                       |
+| cameraResolutionMode      | string   | 'ideal'      | video track resolution mode - `('min' \| 'max' \| 'ideal' \| 'exact')`                  |
+| audioConstraints          | object   |              | audio track constraints - MediaStreamConstraints['audio']                               |
+| videoConstraints          | object   |              | video track constraints - MediaStreamConstraints['video']                               |
+| requestTimeLimit          | number   |              | limiting the media stream request by time                                               |
+| onStreamRequest           | function |              | callback for when component requests a media stream                                     |
+| onStreamStart             | function |              | callback for when component starts a media stream                                       |
+| onStreamStop              | function |              | callback for when component stops a media stream                                        |
+| onStreamError             | function |              | callback for when component can't receive a media stream                                |
